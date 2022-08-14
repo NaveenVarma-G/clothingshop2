@@ -1,23 +1,24 @@
 /* ======== page layout ======== */
 
-:root{
-    --subtotal-color : #6D5D60;
+:root {
+    --subtotal-color: #6D5D60;
     --box-shadow-color: silver;
     --box-shadow-hover: grey;
 }
 
-.dark-mode{
-    --subtotal-color : #dddddd;
+.dark-mode {
+    --subtotal-color: #dddddd;
     --box-shadow-color: #383233;
     --box-shadow-hover: #302c2d;
 }
 
 /* -------- flex -------- */
-#imgProduct{
-    height :400px;
+#imgProduct {
+    height: 400px;
     width: 300px;
     padding-top: 50px;
 }
+
 .img-product-box {
     display: flex;
     justify-content: center;
@@ -30,7 +31,6 @@
     width: 50%;
     padding: 10px 0 0 40px;
     text-align: center;
-
 }
 
 
@@ -92,6 +92,7 @@
     top: -40px;
     position: relative;
 }
+
 label {
     position: relative;
     left: 25px;
@@ -101,11 +102,13 @@ label {
     position: relative;
     left: 37px;
 }
+
 h3 {
     text-align: center;
 }
+
 p#productInfo {
-    margin-left: 150px;
+    text-align: center;
 }
 /*untill here*/
 .add-cart-button input:hover {
