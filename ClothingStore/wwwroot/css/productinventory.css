@@ -1,0 +1,20 @@
+﻿/* -------- page layout ------- */
+
+/* EDE9E9 */
+:root {
+    --subtotal-color: #6D5D60;
+    --box-shadow-color: silver;
+    --box-shadow-hover: grey;
+    --order-summary-color: #EDE9E9;
+}
+
+.dark-mode {
+    --subtotal-color: #dddddd;
+    --box-shadow-color: #383233;
+    --box-shadow-hover: #302c2d;
+    --order-summary-color: #616060;
+}
+
+.container {
+    padding-top:20px;
+}
