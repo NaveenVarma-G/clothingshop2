@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ACdi9eiQ6RohfY9oOB+m6mxnu5gA4RnpeZvvsjqlbjc=",
+  "Hash": "h9jahkSCyfFrKhA3goRYkR8ey6Amn83bYN5RiU/1JXk=",
   "Source": "ClothingStore",
   "BasePath": "_content/ClothingStore",
   "Mode": "Default",
@@ -219,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\product.css"
+    },
+    {
+      "Identity": "C:\\Users\\neeha\\OneDrive\\Desktop\\Algonquin\\Web Programming Language I\\Clothinshop2\\ClothingStore\\wwwroot\\css\\productinventory.css",
+      "SourceId": "ClothingStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\neeha\\OneDrive\\Desktop\\Algonquin\\Web Programming Language I\\Clothinshop2\\ClothingStore\\wwwroot\\",
+      "BasePath": "_content/ClothingStore",
+      "RelativePath": "css/productinventory.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\productinventory.css"
     },
     {
       "Identity": "C:\\Users\\neeha\\OneDrive\\Desktop\\Algonquin\\Web Programming Language I\\Clothinshop2\\ClothingStore\\wwwroot\\css\\shopping_cart.css",
