@@ -1,0 +1,31 @@
+﻿<main style="padding-top:30px;">
+    <link rel="stylesheet" href="~/css/order_finalized.css" asp-append-version=true/>
+        <div class="container3">
+            <div class="row3-2">
+
+                <div class="submission-Image">
+                    <img src="../static/images/thanks.jpg" alt="Order submission">
+                </div>
+
+                <div class="order-content">
+                    <h3>
+                        Thank you for your order
+                    </h3>
+                    <hr>
+                    <div class="center">
+                        <p>
+                            order number is
+                        </p>
+                        <div id='orderNo' class="order-num">@Model.OrderId</div>
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="flex">
+                    <p>We will send a confirmation email to your email;</p>
+                    <p id='email' class="confirmation-email"></p>
+                </div>
+
+            </div>
+        </div>
+    </main>

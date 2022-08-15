@@ -1,0 +1,67 @@
+﻿@model ClothingStore.DataAccess.UserDetail
+ @using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+ <main style="padding-top:30px;">
+     <link rel="stylesheet" href="~/css/order_confirmation.css" asp-append-version="true" />
+        <div class="main-container">
+            <hr>
+            <h3>Please check your shipping details.</h3>
+            <div class="container-2">
+                <div class="customer-box">
+
+                    <h4>Shipping address</h4>
+                    <div class="customer-name">
+                        <p>Name:</p>
+                        <p id='name'>@Model.FirstName</p>
+                    </div>
+                    <div class="customer-address">
+                        <p>Address:</p>
+                        <p id='address'>@Model.Address</p>
+                    </div>
+                    <div class="customer-postal">
+                        <p>Postal Code:</p>
+                        <p id='postal'>@Model.PinCode</p>
+                    </div>
+                    <div class="customer-phone">
+                        <p>Phone:</p>
+                        <p id='phone'>@Model.PhoneNumber</p>
+                    </div>
+                    <div class="customer-email">
+                        <p>Email address:</p>
+                        <p id='email'>@Model.EmailId</p>
+                    </div>
+                    
+                </div>
+                <div class="total-box">
+                    <h4>Your Total</h4>
+                    @{
+                    double subtotal = double.Parse(Accessor.HttpContext.Session.GetString("cartSubTotal"));
+                    double tax = subtotal * 0.13;
+                        double total = subtotal + tax + 5;
+                    <div class="cart-subtotal">
+                        <p>subtotal:
+                        <p>
+                        <p id='subtotal'>@subtotal</p>
+                    </div>
+                    <div class="cart-shipping">
+                        <p>shipping:</p>
+                        <p id='shipping'>$5</p>
+                    </div>
+                    <div class="cart-tax">
+                        <p>tax:</p>
+                        <p id='tax'>@tax</p>
+                    </div>
+                    <div class="cart-total">
+                        <p>TOTAL:</p>
+                        <p id='total'>@total</p>
+                    </div>}
+                </div>
+                <div class="button-box">
+                <form asp-controller="OrderDetails" asp-action="CreateOrder">
+                    <input type="submit" value="Place Your Order" >
+                    </form>
+                </div>
+            </div>
+           
+        </div>
+    </main>

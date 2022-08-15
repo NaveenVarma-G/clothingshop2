@@ -36,6 +36,7 @@
                         {
                             subtotal = subtotal + (item.Price * item.Count);
                         }
+                        Accessor.HttpContext.Session.SetString("cartSubTotal", "" + subtotal);
                         double tax = subtotal * 0.13;
                         double total = subtotal + tax;
                         <p id='pricing'>                           
@@ -47,18 +48,28 @@
 
                     }
                 </div>
-                @if (Accessor.HttpContext.Session.GetString("loginId") != null)
+                @if (Accessor.HttpContext.Session.GetString("loginId") != null )
                 {
-                    <form asp-action="Checkout">
-                        <input class="btn" type="submit"  value="Checkout">
-                    </form>
-                } else
-                {
+                   if(Accessor.HttpContext.Session.GetString("cart") != null)
                     {
-                      
-                        <input class="btn btn-danger" type="submit" disabled value="Login to Checkout">
-                      
-                    }
+                        Console.WriteLine("check on");
+                        <form asp-controller="UserDetails" asp-action="Checkout">
+                        <input class="btn" type="submit"  value="Checkout">
+                        </form>
+                    }else{
+                        Console.WriteLine("check off");
+                        <form asp-action="Checkout">
+                        <input class="btn" type="submit" disabled value="Checkout">
+                    </form>
+                    } 
+                }
+                else
+                {
+                    
+                     <form asp-controller="UserLogins" asp-action="Login"> 
+                        <input class="btn btn-danger" type="submit"  value="Login to Checkout">
+                      </form>
+                    
                 }
             </div>
             </div>

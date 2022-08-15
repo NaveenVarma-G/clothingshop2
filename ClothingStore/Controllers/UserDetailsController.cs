@@ -190,5 +190,15 @@ namespace ClothingStore.Controllers
         {
           return (_context.UserDetails?.Any(e => e.UserId == id)).GetValueOrDefault();
         }
+
+        public async Task<ActionResult> Checkout()
+        {
+            int userId = int.Parse(HttpContext.Session.GetString("loginId"));
+
+            var userDetail = await _context.UserDetails
+                .FirstOrDefaultAsync(m => m.UserId == userId);
+
+            return View(userDetail);
+        }
     }
 }
