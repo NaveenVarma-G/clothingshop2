@@ -3,8 +3,9 @@
 @{
     ViewData["Title"] = "Create";
 }
-<main style="padding-top:100px;">
-<h1>SignUp</h1>
+<main style="padding-top:150px;">
+    <link rel="stylesheet" href="~/css/Signup.css" asp-append-version="true" />
+<h2>SignUp</h2>
 
 <h4>Create Credentials</h4>
 <hr />
@@ -38,9 +39,7 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
