@@ -139,11 +139,12 @@ namespace ClothingStore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductId,ProductName,ProductType,ProductDescription,Price")] ProductDetail productDetail)
+        public async Task<IActionResult> Create([Bind("ProductName,ProductType,ProductDescription,Price")] ProductDetail productDetail)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(productDetail);
+                String sqlQuery = "Insert into ProductDetails (ProductName,ProductType,ProductDescription,Price) values ('" + productDetail.ProductName + "','" + productDetail.ProductType + "','" + productDetail.ProductDescription + "'," + productDetail.Price + ")";
+                _context.Database.ExecuteSqlRaw(sqlQuery);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

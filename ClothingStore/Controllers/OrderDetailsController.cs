@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ClothingStore.DataAccess;
+using Newtonsoft.Json;
 
 namespace ClothingStore.Controllers
 {
@@ -162,6 +163,25 @@ namespace ClothingStore.Controllers
         private bool OrderDetailExists(int id)
         {
           return (_context.OrderDetails?.Any(e => e.OrderId == id)).GetValueOrDefault();
+        }
+
+        public async Task<ActionResult> CreateOrder()
+        {
+            int userId = int.Parse(HttpContext.Session.GetString("loginId"));
+            List<Cart> cart = JsonConvert.DeserializeObject<List<Cart>>(HttpContext.Session.GetString("cart"));
+            String sqlString = "Insert into OrderDetails (UserId,DeliveryType,PaymentType) values (" + userId + ", 0,0);";
+               _context.Database.ExecuteSqlRaw(sqlString);
+            int orderId = _context.OrderDetails.Max(u => u.OrderId);
+            foreach (Cart cartItem in cart)
+            {
+                String cartSql = "Insert into CartItems values( " + orderId + "," + cartItem.Id + ", " + cartItem.count + ");";
+                _context.Database.ExecuteSqlRaw(cartSql);
+                await _context.SaveChangesAsync();
+
+            }
+            OrderDetail order = new OrderDetail();
+            order.OrderId = orderId;
+            return View(order);
         }
     }
 }
