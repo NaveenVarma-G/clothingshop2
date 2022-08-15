@@ -3,9 +3,15 @@
 @{
     ViewData["Title"] = "Details";
 }
-<link rel="stylesheet" href="~/css/productinventory.css" asp-append-version="true" />
-<h1>New Product</h1>
+<main>
 
+<link rel="stylesheet" href="~/css/Signup.css" asp-append-version="true" />
+<div class="container">
+    <div class="row justify-content-center">
+   <div class="col-md-5">
+   <div class="card">
+    <h4 class="card-title text-center">Product Details</h4>
+    <div class="card-body py-md-4">
 <div>
     
     <hr />
@@ -38,5 +44,11 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.ProductId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>

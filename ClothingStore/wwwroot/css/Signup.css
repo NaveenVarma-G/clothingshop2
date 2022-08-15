@@ -14,6 +14,7 @@ a:hover{
 .card {
     border: 0.40rem solid #f8f9fa;
     top: 15%;
+    margin-top:50px;
     margin-bottom: 103px;
 }
 .form-control{
